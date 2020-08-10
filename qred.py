@@ -1,4 +1,7 @@
 import qrcode
+import os
+
+file_name = "qrcode/087qrcode.png"
 
 qr = qrcode.QRCode(
     version=12,
@@ -11,5 +14,6 @@ qr.add_data("https://087kasumi.github.io/ohana.github.io/")
 qr.make()
 img = qr.make_image(fill_color="#23dda0", back_color="red")
 
-img.save("qrcode/087qrcode.png")
-
+img.save(file_name)
+current_dir = os.getcwd()
+print("「{0}\\{1}」にQRコード画像を保存しました".format(current_dir,file_name))
